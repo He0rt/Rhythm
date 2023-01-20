@@ -1,27 +1,32 @@
 @charset "UTF-8";
 /*очищаю все отступы и границы*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,600&display=swap);
 * {
   padding: 0;
   margin: 0;
-  border: 0; }
+  border: 0;
+}
 
 /* меняю модель подсчета ширины блока  */
 *, *::after, *::before {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /*убираю линии обводки при наведении на єлементы и ссылки
 в некоторых браузерах*/
 :focus, :active {
-  outline: none; }
+  outline: none;
+}
 
 a:focus, a:active {
-  outline: none; }
+  outline: none;
+}
 
 /*делаю некоторые теги явно блочными*/
 nav, footer, header, aside {
-  display: block; }
+  display: block;
+}
 
 /*Уравнивают поведение шрифтов для разных браузерах*/
 html, body {
@@ -32,36 +37,115 @@ html, body {
   font-size: 14px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+}
 
 /*принуждаем наследовать семейство шрифта*/
 input, button, textarea {
-  font-family: inherit; }
+  font-family: inherit;
+}
 
 input::-ms-clear {
-  display: none; }
-
-/*для старых интернет-эксплореров убирает крестик в
+  display: none;
+} /*для старых интернет-эксплореров убирает крестик в
 углу поля ввода инпута, если внутрь него введен текст*/
 button {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 button::-moz-focus-inner {
   padding: 0;
-  bottom: 0; }
+  bottom: 0;
+}
 
 a, a:visited {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 a:hover {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 ul li {
-  list-style: none; }
+  list-style: none;
+}
 
 img {
-  vertical-align: top; }
+  vertical-align: top;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
-  font-weight: 400; }
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: CalSans;
+  font-display: swap;
+  src: url("../fonts/CalSans-SemiBold.woff2"), url("../fonts/CalSans-SemiBold.woff1"), format(woff);
+  font-weight: 400;
+  font-style: normal;
+}
+html, body {
+  height: 100%;
+  min-width: 100%;
+}
+
+body {
+  line-height: 1;
+  font-family: "Poppins";
+  color: #666666;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+[class*=__container] {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*-------------------------------------------*/
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 131px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 152px;
+}
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 56px;
+}
+
+.nemu__link {
+  color: rgba(18, 18, 18, 0.4);
+  font-weight: 500;
+}
+.nemu__link:hover {
+  text-decoration: underline;
+}
