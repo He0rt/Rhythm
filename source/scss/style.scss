@@ -1,23 +1,23 @@
-@import 'null.scss';
+@import "null.scss";
 
 @import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,600&display=swap);
 
 @font-face {
     font-family: CalSans;
     font-display: swap;
-    src: url("../fonts/CalSans-SemiBold.woff2"),url("../fonts/CalSans-SemiBold.woff1"),format(woff);
+    src: url("../fonts/CalSans-SemiBold.woff2"), url("../fonts/CalSans-SemiBold.woff1"), format(woff);
     font-weight: 400;
     font-style: normal;
 }
 
-
-html,body{
+html,
+body {
     height: 100%;
     min-width: 100%;
 }
-body{
+body {
     line-height: 1;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     color: #666666;
 }
 
@@ -28,16 +28,22 @@ body{
     flex-direction: column;
     justify-content: space-between;
 }
+
+.page {
+    &__main {
+    }
+}
+
 .header {
 }
-.main {
+.page {
     flex: 1 1 auto;
 }
 .footer {
 }
 
-
-[class*="__container"]{   //селектор по атрибуту
+[class*="__container"] {
+    //селектор по атрибуту
     max-width: 1230px;
     margin: 0 auto;
     padding: 0 15px;
@@ -46,8 +52,13 @@ body{
 /*-------------------------------------------*/
 
 .header {
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
     &__container {
+        padding: 5px 0;
         display: flex;
         gap: 131px;
         align-items: center;
@@ -61,14 +72,14 @@ body{
     }
 }
 .menu {
-
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
     &__list {
         display: flex;
-        gap:56px ;
+        gap: 56px;
     }
 }
 .nemu {
-
     &__item {
     }
 
@@ -76,7 +87,173 @@ body{
         color: rgba(18, 18, 18, 0.4);
         font-weight: 500;
     }
-    &__link:hover{
+    &__link:hover {
         text-decoration: underline;
     }
 }
+
+
+/*---------------------------------*/
+
+.main {
+    padding-bottom: 80px;
+    &__container {
+        display: flex;
+    }
+
+    &__content {
+        align-self: flex-end;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        padding-right: 20px;
+        flex: 0 1 50%;
+    }
+
+    &__title {
+        font-family: CalSans;
+        font-weight: 600;
+        font-size: 56px;
+        line-height: 67px;
+        color: #121212;
+        span {
+            color: #ff6428;
+        }
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__text {
+        line-height: 24px;
+        color: #666666;
+        font-weight: 500;
+        max-width: 420px;
+        &:not(:last-child) {
+            margin-bottom: 31px;
+        }
+    }
+
+    &__actions {
+    }
+
+    &__decor {
+        flex: 0 1 50%;
+    }
+}
+.actions {
+    &__main {
+        display: flex;
+        align-items: center;
+    }
+}
+.actions-main {
+    &__button {
+        padding: 18.5px 48px;
+        background: #ff6428;
+        border-radius: 40px;
+        color: #fff;
+        line-height: 28px;
+        font-weight: 600;
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+
+    &__icon {
+        &:not(:last-child) {
+            margin-right: 28px;
+        }
+    }
+}
+
+.main {
+
+    &__decor {
+    }
+
+    &__image {
+        img{
+            max-width:672px;
+        }
+        display: inline-block;
+        margin-right: -135px;
+        position: relative;
+        &::after{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            right: 36.3%;
+            transform: translate(0,50%);
+            width: 80px;
+            height: 80px;
+            background : url('../img/main/decor.svg') 0px 0px/cover no-repeat;
+        }
+    }
+}
+
+
+
+
+
+/*------------------------------breakpoints------------------*/
+@import "breakpoints.scss";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
